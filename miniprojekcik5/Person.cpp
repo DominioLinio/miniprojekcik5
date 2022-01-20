@@ -55,5 +55,6 @@ float Person::GetBirthDate()
 
 char Person::Introduction()
 {
+	std::cout<<"Name: "<<Name<<", Surname: "<<Surname<<", Date of birth: " << day << "." << month << "." << year;
 	return 0;
 }

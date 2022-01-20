@@ -8,11 +8,18 @@
 
 int main()
 {
-	std::cout << "ggg";
+	
 	Person person("Anja", "Rubik");
+	Student student();
 
+
+	person.SetNameSurname();
+	person.GetNameSurname();
 	person.SetBirthDate();
-	person.GetBirthDate();
+	person.Introduction();
+	student.SetGrades();
+
+	//person.GetBirthDate();
 
 	/*std::cout << "Press \"1\" to Set your date of birth. \n Press \"2\" to print\n";
 	int p;

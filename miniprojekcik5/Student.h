@@ -7,6 +7,9 @@
 class Student : Person
 {
 public:
+	Student(int Grades);
+	~Student();
+
 	void SetGrades();
 	int GetGrade();
 	char GetAllGrades();
@@ -16,7 +19,11 @@ public:
 	std::string Subject;
 
 	std::vector<std::pair<std::string, int>> array;
-	std::pair<std::string, int> para;
+	std::pair<std::string, int> pair0;
+	std::pair<std::string, int> pair1;
+	std::pair<std::string, int> pair2;
+	std::pair<std::string, int> pair3;
+	std::pair<std::string, int> pair4;
 	//std::cout<< para.first << " " << para.second << std::endl;
 };
 
