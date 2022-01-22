@@ -1,6 +1,6 @@
 #include "Person.h"
 
-Person::Person(std::string Name, std::string Surname)
+Person::Person()
 {
 	/*SetBirthDate();*/
 }
@@ -65,8 +65,7 @@ float Person::GetBirthDate()
 	return day, month, year;
 }
 
-char Person::Introduction()
+void Person::Introduction()
 {
 	std::cout<<"Name: "<<Name<<", Surname: "<<Surname<<", Date of birth: " << day << "." << month << "." << year<<"\n";
-	return 0;
 }

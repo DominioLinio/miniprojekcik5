@@ -3,16 +3,16 @@
 #include "Person.h"
 #include <vector>
 
-class Employee : Person
+class Employee : public Person
 {
 public:
-	Employee(std::string Name, std::string Surname);
+	Employee();
 	~Employee();
 
 	void AddSubject();
 	void DeleteSubject();
 	void IsTeachingTheSubject();
-	char Introduction();
+	void Introduction();
 	
 	std::vector<std::string> GetAddedSubject();
 	std::vector<std::string> Subjects;

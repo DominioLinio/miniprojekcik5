@@ -1,7 +1,7 @@
 #include "Student.h"
 #include "Person.h"
 
-Student::Student(std::string Name, std::string Surname) : Person(Name, Surname)
+Student::Student() : Person()
 {
 	
 }
@@ -51,10 +51,11 @@ std::map<std::string, int> Student::GetAllGrades()
 	return grades;
 }
 
-char Student::Introduction()
-{
-	Person person("a", "b");
-	person.Introduction();
+void Student::Introduction()
+{	
+	Person::GetNameSurname();
+	//Person::GetBirthDate();
+	Person::Introduction();
 	for (auto pair : GetAllGrades()) {
 		std::cout << "Subject: " << pair.first << ", Grade: " << pair.second << std::endl;
 	}

@@ -8,25 +8,27 @@
 
 int main()
 {
+	Person person; // Dominika
+	Student student; // Piotr
+	Employee employee; // Kubus
+
+
+	/*person.SetNameSurname();
+	person.GetNameSurname();
+	person.SetBirthDate();
+	person.Introduction();*/
+
+	student.SetNameSurname();
+	student.SetBirthDate();
+	student.SetGrades();
+	student.Introduction();
 	
-	Person person("Anja", "Rubik");
-	Student student("anaj", "rjubjik");
-	Employee employee("anaj", "rubik");
-
-
-	//person.SetNameSurname();
-	//person.GetNameSurname();
-	//person.SetBirthDate();
-	//person.Introduction();
-//	student.SetGrades();
-
-	for (auto pair : student.GetAllGrades()) {
-		std::cout << "Subject: " << pair.first << ", Grade: " << pair.second << std::endl;
-	}
-	
+	employee.SetNameSurname();
+	employee.SetBirthDate();
 	employee.AddSubject();
 	employee.DeleteSubject();
-	
+	employee.IsTeachingTheSubject();
+	employee.Introduction();
 
 	//person.GetBirthDate();
 

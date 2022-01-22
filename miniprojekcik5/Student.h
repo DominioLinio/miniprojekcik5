@@ -5,16 +5,16 @@
 #include <stdio.h>
 #include <map>
 
-class Student : Person
+class Student : public Person
 {
 public:
-	Student(std::string Name, std::string Surname);
+	Student();
 	~Student();
 
 	void SetGrades();
 	int GetGrade(std::string subject);
 	std::map<std::string, int> GetAllGrades();
-	char Introduction();
+	void Introduction();
 
 	std::map<std::string, int> grades; 
 	

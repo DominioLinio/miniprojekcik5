@@ -1,7 +1,7 @@
 #include "Employee.h"
 
 
-Employee::Employee(std::string Name, std::string Surname) : Person(Name, Surname)
+Employee::Employee() : Person()
 {
 
 }
@@ -50,20 +50,22 @@ std::vector<std::string> Employee::GetAddedSubject()
 
 void Employee::DeleteSubject()
 {
-	for (int i = 0; i < Subjects.size(); i++)
+	/*for (int i = 0; i < Subjects.size(); i++)
 	{
 		std::cout << Subjects[i]<<"\n";
-	}
+	}*/
 
 	while (true) {
 		//std::cout << Subjects.size();
+		std::cout << "The following list of subjects: \n";
 		for (int i = 0; i < Subjects.size(); i++)
 		{
 			std::cout << Subjects[i] << "\n";
 		}
+		std::cout << "\n";
 		if (Subjects.size() == 0)
 		{
-			std::cout << "All the subjects have been erased.\n";
+			std::cout << "All the subjects have been erased.\n\n";
 			break;
 		}
 		std::cout << "Type in the subject you want to erase: \n";
@@ -81,7 +83,7 @@ void Employee::DeleteSubject()
 		else
 		{
 			Subjects.erase(remove(Subjects.begin(), Subjects.end(), subject), Subjects.end());
-			std::cout << "The Subject has been erased.\n";
+			std::cout << "\nThe Subject has been erased.\n\n";
 		}
 			
 		
@@ -111,7 +113,15 @@ void Employee::IsTeachingTheSubject()
 	}
 }
 
-char Employee::Introduction()
+void Employee::Introduction()
 {
-	
+	Person::GetNameSurname();
+	Person::GetBirthDate();
+	Person::Introduction();
+	std::cout << "Subjects teached: \n";
+	for (int i = 0; i < Subjects.size(); i++)
+	{
+		std::cout << Subjects[i] << "\n";
+	}
+
 }

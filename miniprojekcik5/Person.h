@@ -4,14 +4,14 @@
 class Person
 {
 public:
-	Person(std::string Name, std::string Surname);
+	Person();
 	~Person();
 
 	void SetNameSurname();
 	std::string GetNameSurname();
 	void SetBirthDate();
 	float GetBirthDate();
-	char Introduction();
+	void Introduction();
 
 	
 	std::string Name;
