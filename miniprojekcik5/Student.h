@@ -3,27 +3,20 @@
 #include "Person.h"
 #include <vector>
 #include <stdio.h>
+#include <map>
 
 class Student : Person
 {
 public:
-	Student(int Grades);
+	Student(std::string Name, std::string Surname);
 	~Student();
 
 	void SetGrades();
-	int GetGrade();
-	char GetAllGrades();
+	int GetGrade(std::string subject);
+	std::map<std::string, int> GetAllGrades();
 	char Introduction();
 
-	int Grades;
-	std::string Subject;
-
-	std::vector<std::pair<std::string, int>> array;
-	std::pair<std::string, int> pair0;
-	std::pair<std::string, int> pair1;
-	std::pair<std::string, int> pair2;
-	std::pair<std::string, int> pair3;
-	std::pair<std::string, int> pair4;
-	//std::cout<< para.first << " " << para.second << std::endl;
+	std::map<std::string, int> grades; 
+	
 };
 

@@ -1,8 +1,9 @@
 #include "Student.h"
+#include "Person.h"
 
-Student::Student(int Grades) : Person(Name, Surname)
+Student::Student(std::string Name, std::string Surname) : Person(Name, Surname)
 {
-
+	
 }
 
 Student::~Student()
@@ -11,32 +12,50 @@ Student::~Student()
 
 void Student::SetGrades()
 {
-	pair4.first = "english";
-	pair4.second = 3;
+	while (true)
+	{
+		std::cout << "Type in the name of subject: \nType in \"finish\" to close the function.\n";
+		std::string subject;
+		int grade;
+		std::cin >> subject;
+		if (subject == "finish")
+		{
+			break;
+		}
+		
+		while (true) {
+			std::cout << "Type in the grade: \n";
+			std::cin >> grade;
+		
+		if (grade > 5 || grade < 1)
+			{
+				std::cout << "Format of the grade does not meet the requirements. Correct format: 1-5\n";
+				continue;
+			}break;
+		}
 
-	std::cout << "Type in grades: ";
-	std::cin >> pair0.first >> pair0.second;
-	std::cin >> pair1.first >> pair1.second;
-	std::cin >> pair2.first >> pair2.second;
-	std::cin >> pair3.first >> pair3.second;
+		grades[subject] = grade;
+	}
+}
+// sprawdzanie czy student ma wpisan¹ ocenê to do.
+
+int Student::GetGrade(std::string subject)
+{
+	
+	//std::cout << grades[subject] << std::endl;
+	return grades.at(subject);
 }
 
-int Student::GetGrade()
+std::map<std::string, int> Student::GetAllGrades()
 {
-	std::cout << pair0.first << " " << pair0.second << std::endl;
-	std::cout << pair1.first << " " << pair1.second << std::endl;
-	std::cout << pair2.first << " " << pair2.second << std::endl;
-	std::cout << pair3.first << " " << pair3.second << std::endl;
-	std::cout << pair4.first << " " << pair4.second << std::endl;
-	return 0;
-}
-
-char Student::GetAllGrades()
-{
-	return 0;
+	return grades;
 }
 
 char Student::Introduction()
 {
-	return 0;
+	Person person("a", "b");
+	person.Introduction();
+	for (auto pair : GetAllGrades()) {
+		std::cout << "Subject: " << pair.first << ", Grade: " << pair.second << std::endl;
+	}
 }

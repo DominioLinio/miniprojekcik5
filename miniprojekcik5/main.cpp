@@ -10,14 +10,23 @@ int main()
 {
 	
 	Person person("Anja", "Rubik");
-	Student student();
+	Student student("anaj", "rjubjik");
+	Employee employee("anaj", "rubik");
 
 
-	person.SetNameSurname();
-	person.GetNameSurname();
-	person.SetBirthDate();
-	person.Introduction();
-	student.SetGrades();
+	//person.SetNameSurname();
+	//person.GetNameSurname();
+	//person.SetBirthDate();
+	//person.Introduction();
+//	student.SetGrades();
+
+	for (auto pair : student.GetAllGrades()) {
+		std::cout << "Subject: " << pair.first << ", Grade: " << pair.second << std::endl;
+	}
+	
+	employee.AddSubject();
+	employee.DeleteSubject();
+	
 
 	//person.GetBirthDate();
 
